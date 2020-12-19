@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Search from './components/Search';
-export default function App() {
+import {  StyleSheet, Text, View } from 'react-native';
+import Navigation from './Navigation/Navigation'
+export default class App extends React.Component {
+
+
+  render(){
   return (
-    <Search/>
-  );
+    <View style={[styles.container, styles.horizontal]}>
+
+          <Navigation/>
+
+    </View>
+  );}
 }
 
 const styles = StyleSheet.create({
@@ -15,4 +21,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  horizontal:{
+    flexDirection : "row",
+    justifyContent:"space-around",
+    padding : 10
+  }
 });

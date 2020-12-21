@@ -1,4 +1,7 @@
+import { isMoment } from 'moment';
 import React from 'react';
+import {Provider} from 'react-redux'
+import Store from './Store/configureStore'
 import {  StyleSheet, Text, View } from 'react-native';
 import Navigation from './Navigation/Navigation'
 export default class App extends React.Component {
@@ -7,8 +10,9 @@ export default class App extends React.Component {
   render(){
   return (
     <View style={[styles.container, styles.horizontal]}>
-
+          <Provider store={Store}>
           <Navigation/>
+          </Provider>
 
     </View>
   );}
